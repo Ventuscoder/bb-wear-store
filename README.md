@@ -1,2 +1,2 @@
 # bb-wear-store
-An e-commerce site built using React.JS for branded basketball shoes
+An E-commerce site built using React.JS for signature basketball shoes
