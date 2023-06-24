@@ -1,4 +1,4 @@
-import './categories.styles.scss'
+import Directory from './components/directory/directory.component'
 
 function App() {
 
@@ -11,17 +11,7 @@ function App() {
   ]
 
   return (
-    <div className='categories-container'>
-      {categories.map(({title, id, img}) => (
-        <div key={id} className='category-container'>
-          <img src={'images/'+img} alt='' />
-          <div className='category-body-container'>
-            <h2>{title}</h2>
-            <p>Shop Now</p>
-          </div>
-        </div>
-      ))}
-    </div>
+    <Directory categories={categories} />
   )
 }
 
