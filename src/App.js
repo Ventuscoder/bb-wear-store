@@ -1,18 +1,16 @@
-import Directory from './components/directory/directory.component'
+import { Routes, Route } from "react-router-dom"
+
+import Navigation from "./routes/navigation/navigation.component"
+import Home from "./routes/home/home.component"
 
 function App() {
-
-  const categories = [
-    { id: 1, title: 'Jordan', img: 'jordan-cover.jpg' },
-    { id: 2, title: 'KD', img: 'kd-cover.jpg' },
-    { id: 3, title: 'LeBron', img: 'lebron-cover.jpg' },
-    { id: 4, title: 'Curry', img: 'curry-cover.jpg' },
-    { id: 5, title: 'Giannis', img: 'giannis-cover.jpg' }
-  ]
-
   return (
-    <Directory categories={categories} />
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   )
 }
 
-export default App;
+export default App
