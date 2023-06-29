@@ -51,10 +51,10 @@ function SignUpForm() {
             <h2>Don't have an account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
-                <FormInput label='Display Name' type="text" required onChange={handleChange} name="displayName" value='' />
-                <FormInput label='Email' type="email" required onChange={handleChange} name="email" value='' />
-                <FormInput label='Password' type="password" required onChange={handleChange} name="password" value='' />
-                <FormInput label='Confirm Password' type="password" required onChange={handleChange} name="confirmPassword" value='' />
+                <FormInput label='Display Name' type="text" required onChange={handleChange} name="displayName" value={formFields.displayName} />
+                <FormInput label='Email' type="email" required onChange={handleChange} name="email" value={formFields.email} />
+                <FormInput label='Password' type="password" required onChange={handleChange} name="password" value={formFields.password} />
+                <FormInput label='Confirm Password' type="password" required onChange={handleChange} name="confirmPassword" value={formFields.confirmPassword} />
                 <Button type="submit" buttonType='inverted'>Sign Up</Button>
             </form>
         </div>
