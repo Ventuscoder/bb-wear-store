@@ -7,14 +7,14 @@ import './product-card.styles.scss'
 import Button from '../button/button.component'
 
 function ProductCard({ product }) {
-    const { name, price, id, location } = product
+    const { name, price, id } = product
     const { addItemToCart } = useContext(CartContext)
 
     function addProductToCart() { addItemToCart(product) }
 
     return (
         <div className='product-card-container'>
-            <img src={'images/'+location+'/'+id+'.png'} alt={name} />
+            <img src={'images/products/'+id+'.png'} alt={name} />
             <div className='footer'>
                 <span className="name">{name}</span>
                 <span className="price">{price}</span>

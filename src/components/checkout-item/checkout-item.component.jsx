@@ -16,7 +16,7 @@ function CheckoutItem({cartItem}) {
     return (
         <div className='checkout-item-container'>
             <div className="image-container">
-                <img src={'images/aj/'+id+'.jpg'} alt={name} />
+                <img src={'images/products/'+id+'.png'} alt={name} />
             </div>
             <span className='name'>{name}</span>
             <span className='quantity'>
