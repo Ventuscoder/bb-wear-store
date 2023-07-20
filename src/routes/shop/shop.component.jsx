@@ -7,8 +7,9 @@ import './shop.styles.scss'
 import ProductCard from "../../components/product-card/product-card.component"
 
 import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils'
-import { setCategoriesMap } from "../../store/categories/category.action"
+import { setCategories } from "../../store/categories/category.action"
 import { selectCategoriesMap } from "../../store/categories/category.selector"
+import CategoryPreview from "../../components/category-preview/category-preview.component"
 
 function Shop() {
     const dispatch = useDispatch()
@@ -16,21 +17,16 @@ function Shop() {
     useEffect(() => {
         async function getCategoriesMap() {
             const categoriesArray = await getCategoriesAndDocuments()
-            dispatch(setCategoriesMap(categoryMap))
+            console.log(categoriesArray)
+            dispatch(setCategories(categoriesArray))
         }
 
         getCategoriesMap()
     }, [dispatch])
 
-    const categoriesMap = useSelector(selectCategoriesMap)
-
     return (
         <div className="products-container">
-            {Object.keys(categoriesMap).map(title => {
-                return categoriesMap[title].map(product => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            )}
+            <CategoryPreview />
         </div>
     )
 }
