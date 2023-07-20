@@ -1,4 +1,4 @@
-import { cartActionTypes } from "../../contexts/cart.context"
+import { cartActionTypes } from "./cart.types"
 
 export const cartInitialState = {
     isCartOpen: false,

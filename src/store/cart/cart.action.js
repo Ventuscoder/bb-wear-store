@@ -1,4 +1,4 @@
-import { cartActionTypes } from "../../contexts/cart.context"
+import { cartActionTypes } from "./cart.types"
 import { createAction } from "../../utils/reducer/reducer.utils"
 
 function addCartItem(cartItems, productToAdd) {
