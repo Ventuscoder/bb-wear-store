@@ -13,7 +13,6 @@ function Shop() {
     useEffect(() => {
         async function getCategoriesMap() {
             const categoriesArray = await getCategoriesAndDocuments()
-            console.log(categoriesArray)
             dispatch(setCategories(categoriesArray))
         }
 
