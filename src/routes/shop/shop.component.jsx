@@ -1,28 +1,29 @@
 import { useEffect } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 import './shop.styles.scss'
 
-import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils'
-import { setCategories } from "../../store/categories/category.action"
+import { HashLoader } from "react-spinners"
+
 import CategoryPreview from "../../components/category-preview/category-preview.component"
+import { fetchCategoriesAsync } from "../../store/categories/category.action"
+import { selectCategoriesIsLoading } from "../../store/categories/category.selector"
 
 function Shop() {
     const dispatch = useDispatch()
+    const isLoading = useSelector(selectCategoriesIsLoading)
 
     useEffect(() => {
-        async function getCategoriesMap() {
-            const categoriesArray = await getCategoriesAndDocuments()
-            dispatch(setCategories(categoriesArray))
-        }
-
-        getCategoriesMap()
+        dispatch(fetchCategoriesAsync())
     }, [dispatch])
 
     return (
-        <div className="products-container">
-            <CategoryPreview />
-        </div>
+        isLoading ? <HashLoader color="#5e5d5a" cssOverride={{height: '60vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}} size={75} /> :
+        (
+            <div className="products-container">
+                <CategoryPreview />
+            </div>
+        )
     )
 }
 
