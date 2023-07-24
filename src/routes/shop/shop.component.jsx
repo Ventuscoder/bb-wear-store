@@ -6,7 +6,7 @@ import './shop.styles.scss'
 import { HashLoader } from "react-spinners"
 
 import CategoryPreview from "../../components/category-preview/category-preview.component"
-import { fetchCategoriesAsync } from "../../store/categories/category.action"
+import { fetchCategoriesStart } from "../../store/categories/category.action"
 import { selectCategoriesIsLoading } from "../../store/categories/category.selector"
 
 function Shop() {
@@ -14,7 +14,7 @@ function Shop() {
     const isLoading = useSelector(selectCategoriesIsLoading)
 
     useEffect(() => {
-        dispatch(fetchCategoriesAsync())
+        dispatch(fetchCategoriesStart())
     }, [dispatch])
 
     return (
