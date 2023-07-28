@@ -14,3 +14,15 @@ export function emailSignInStart(email, password) { return createAction(userActi
 export function signInSucess(user) { return createAction(userActionTypes.SIGN_IN_SUCCESS, user) }
 
 export function signInFailed(error) { return createAction(userActionTypes.SIGN_IN_FAILED, error) }
+
+export function signUpStart(email, password, displayName) { return createAction(userActionTypes.SIGN_UP_START, {email, password, displayName}) }
+
+export function signUpSuccess(user, additionalInfo) { return createAction(userActionTypes.SIGN_UP_SUCCESS, {user, additionalInfo}) }
+
+export function signUpFailed(error) { return createAction(userActionTypes.SIGN_UP_FAILED, error) }
+
+export function signOutStart() { return createAction(userActionTypes.SIGN_OUT_START) }
+
+export function signOutSuccess() { return createAction(userActionTypes.SIGN_OUT_SUCCESS) }
+
+export function signOutFailed(error) { return createAction(userActionTypes.SIGN_OUT_FAILED, error) }

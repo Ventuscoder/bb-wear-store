@@ -9,7 +9,14 @@ export function userReducer(state = userInitialState, action = {}) {
                 ...state,
                 currentUser: payload
             }
+        case userActionTypes.SIGN_OUT_SUCCESS:
+            return {
+                ...state,
+                currentUser: null
+            }
         case userActionTypes.SIGN_IN_FAILED:
+        case userActionTypes.SIGN_UP_FAILED:
+        case userActionTypes.SIGN_OUT_FAILED:
             return {
                 ...state, error: payload
             }
