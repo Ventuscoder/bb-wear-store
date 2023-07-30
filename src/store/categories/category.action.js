@@ -14,7 +14,7 @@ export function fetchCategoriesFailed(error) {
     return createAction(categoryActionTypes.FETCH_CATEGORIES_FAILED, error)
 }
 
-/* export function fetchCategoriesAsync() {
+export function fetchCategoriesAsync() {
     return async (dispatch) => {
         dispatch(fetchCategoriesStart())
 
@@ -26,4 +26,4 @@ export function fetchCategoriesFailed(error) {
         }
 
     }
-} */
+}
