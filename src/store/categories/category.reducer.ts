@@ -16,7 +16,7 @@ export const categoriesInitialState: CategoriesState = {
     error: null
 }
 
-export function categoriesReducer(state = categoriesInitialState, action = {} as AnyAction): CategoriesState {
+export function categoriesReducer(state = categoriesInitialState, action: AnyAction): CategoriesState {
     if (fetchCategoriesStart.match(action)) {
         return { ...state, isLoading: true }
     }
