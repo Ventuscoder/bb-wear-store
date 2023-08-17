@@ -1,5 +1,5 @@
 import { cartActionTypes, CartItem } from "./cart.types"
-import { createAction, withMatcher, Action, ActionWithPayload } from "../../utils/reducer/reducer.utils"
+import { createAction, withMatcher, ActionWithPayload } from "../../utils/reducer/reducer.utils"
 import { CategoryItem } from "../categories/category.types"
 
 function addCartItem(cartItems: CartItem[], productToAdd: CategoryItem): CartItem[] {
@@ -40,18 +40,15 @@ export const setCartItems = withMatcher((cartItems: CartItem[]): SetCartItems =>
 
 export function addItemToCart(cartItems: CartItem[], productToAdd: CategoryItem) {
     const newCartItems = addCartItem(cartItems, productToAdd)
-    return createAction(cartActionTypes.SET_CART_ITEMS, newCartItems)
     return setCartItems(newCartItems)
 }
 
 export function removeItemFromCart(cartItems: CartItem[], cartItemToRemove: CartItem) {
     const newCartItems = removeCartItem(cartItems, cartItemToRemove)
-    return createAction(cartActionTypes.SET_CART_ITEMS, newCartItems)
     return setCartItems(newCartItems)
 }
 
 export function clearItemFromCart(cartItems: CartItem[], cartItemToClear: CartItem) {
     const newCartItems = clearCartItem(cartItems, cartItemToClear)
-    return createAction(cartActionTypes.SET_CART_ITEMS, newCartItems)
     return setCartItems(newCartItems)
 }
