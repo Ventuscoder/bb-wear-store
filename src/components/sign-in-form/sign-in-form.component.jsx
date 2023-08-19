@@ -56,7 +56,7 @@ function SignInForm() {
                 <FormInput label='Password' type="password" required onChange={handleChange} name="password" value={formFields.password} />
                 <div className="buttons-container">
                     <Button type="submit">Sign In</Button>
-                    <Button type="button" buttonType="google" onClick={signInWithGoogle}>Google sign in</Button>
+                    <Button type="button" buttonType="google-sign-in" onClick={signInWithGoogle}>Google sign in</Button>
                 </div>
             </form>
         </div>
